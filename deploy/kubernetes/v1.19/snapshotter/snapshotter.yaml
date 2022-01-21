@@ -64,7 +64,7 @@ spec:
             capabilities:
               add: ["SYS_ADMIN"]
             allowPrivilegeEscalation: true
-          image: quay.io/k8scsi/csi-snapshotter:v3.0.3
+          image: longhornio/csi-snapshotter:v3.0.3
           args:
             - --v=5
             - --csi-address=$(ADDRESS)
