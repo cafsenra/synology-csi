@@ -1,3 +1,7 @@
+# Dockerfile
+
+arm64 platform
+
 # Synology CSI Driver for Kubernetes
 
 The official [Container Storage Interface](https://github.com/container-storage-interface) driver for Synology NAS.
