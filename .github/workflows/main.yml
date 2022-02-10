@@ -2,7 +2,7 @@ name: Build docker image
 
 on:
   push:
-    branches: 'main'
+    branches: 'arm64/release-v1.0.0'
 
 jobs:
   build_and_push_docker_image:
@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build Docker image
       run: |
-        docker buildx build —-platform=linux/arm64 -t ghcr.io/cafsenra/synology-csi/synology-csi:v1.0.0 .
+        docker build -t ghcr.io/cafsenra/synology-csi/synology-csi:v1.0.0 .
         echo $TOKEN | docker login ghcr.io -u USERNAME --password-stdin
         docker push ghcr.io/cafsenra/synology-csi/synology-csi:v1.0.0
       env:
