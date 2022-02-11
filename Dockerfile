@@ -1,7 +1,7 @@
 # Copyright 2021 Synology Inc.
 
 ############## Build stage ##############
-FROM --platform=linux/arm64 golang:1.13.6-alpine as builder
+FROM golang:1.13.6-alpine as builder
 LABEL stage=synobuilder
 
 RUN apk add --no-cache alpine-sdk
@@ -16,7 +16,7 @@ COPY pkg ./pkg
 RUN make
 
 ############## Final stage ##############
-FROM --platform=linux/arm64 alpine:latest
+FROM alpine:latest
 LABEL maintainers="Synology Authors" \
       description="Synology CSI Plugin"
 
